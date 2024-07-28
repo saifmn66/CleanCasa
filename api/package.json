@@ -1,0 +1,19 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "cleancasa",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saifmn66/CleanCasa.git"
+  },
+  "author": "saif mensi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saifmn66/CleanCasa/issues"
+  },
+  "homepage": "https://github.com/saifmn66/CleanCasa#readme"
+}

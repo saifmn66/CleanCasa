@@ -1,0 +1,13 @@
+@import 'flowbite/dist/flowbite.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.custom-link {
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.5s;
+  }
+  
+  .custom-link:hover {
+    border-color: #2563eb; /* This is the Tailwind 'blue-600' color */
+  }

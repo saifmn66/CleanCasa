@@ -1,13 +1,52 @@
 import { useEffect, useRef, useState } from "react";
-import { useSpring, useTrail, animated, useInView } from "@react-spring/web";
+import { useSpring,  animated, useInView } from "@react-spring/web";
 import cover from "../img/newcover2.png";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 import rend from "../img/rend.png";
+import axios from "axios";
 
 export default function Rendezvous() {
-  const [startDate, setStartDate] = useState(new Date());
+  const [form , setform] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    date: "",
+    message: ""
+});
+const [startDate, setStartDate] = useState(null);
+
+const handleDateChange = (date) => {
+  const utcDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
+  
+  setStartDate(utcDate);
+  setform({
+    ...form,
+    date: date
+  });
+};
+
+const Handlchange = (e) => {
+    setform({
+        ...form ,
+        [e.target.name]: e.target.value
+    })
+}
+const handleSubmit = () => {
+    
+    axios.post('http://localhost:3000/appointment/addapp', form )
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+  }
+
+
+
+
   // Animation for heading and paragraph
   const [headingSpring, headingApi] = useSpring(() => ({
     opacity: 0,
@@ -24,27 +63,17 @@ export default function Rendezvous() {
     transform: "scale(0.9)",
   }));
 
-  // Animation for form inputs
-  const [formSpring, formApi] = useSpring(() => ({
-    opacity: 0,
-    transform: "translateY(50px)",
-  }));
+  
 
-  // Animation for form elements
-  const formElements = ["Name", "Email", "Phone No.", "Message"];
-  const [trailSprings, trailApi] = useTrail(formElements.length, () => ({
-    opacity: 0,
-    transform: "translateY(20px)",
-  }));
 
   // Trigger animations when in view
   const headingRef = useRef();
   const imageRef = useRef();
-  const formRef = useRef();
+  
 
   const headingInView = useInView(headingRef);
   const imageInView = useInView(imageRef);
-  const formInView = useInView(formRef);
+  
 
   useEffect(() => {
     if (headingInView) {
@@ -54,11 +83,7 @@ export default function Rendezvous() {
     if (imageInView) {
       imageApi.start({ opacity: 1, transform: "scale(1)" });
     }
-    if (formInView) {
-      formApi.start({ opacity: 1, transform: "translateY(0)" });
-      trailApi.start({ opacity: 1, transform: "translateY(0)" });
-    }
-  }, [headingInView, imageInView, formInView]);
+  }, [headingInView, imageInView]);
 
   return (
     <div className="pb-36 bg-[#f1f1f1]">
@@ -112,16 +137,22 @@ export default function Rendezvous() {
             <div className="max-w-md mx-auto space-y-3 relative">
               <input
                 type="text"
+                onChange={Handlchange}
+                name="name"
                 placeholder="Name"
                 className="w-full bg-gray-100 rounded-md py-3 px-4 text-sm outline-blue-600 focus-within:bg-transparent"
               />
               <input
                 type="email"
+                onChange={Handlchange}
+                name="email"
                 placeholder="Email"
                 className="w-full bg-gray-100 rounded-md py-3 px-4 text-sm outline-blue-600 focus-within:bg-transparent"
               />
               <input
                 type="email"
+                onChange={Handlchange}
+                name="phone"
                 placeholder="Phone No."
                 className="w-full bg-gray-100 rounded-md py-3 px-4 text-sm outline-blue-600 focus-within:bg-transparent"
               />
@@ -146,19 +177,25 @@ export default function Rendezvous() {
                 <DatePicker
                   className="w-full bg-gray-100 rounded-md py-3 pl-10 pr-4 text-sm outline-blue-600 bg-transparent"
                   selected={startDate}
-                  onChange={(date) => setStartDate(date)}
+                  onChange={handleDateChange}
+                  name="date"
+                  dateFormat="yyyy-MM-dd"
                   placeholderText="Date"
+                  showTimeSelect={false}
                 />
               </div>
 
               <textarea
                 placeholder="Message"
+                onChange={Handlchange}
                 rows="6"
+                name="message"
                 className="w-full bg-gray-100 rounded-md px-4 text-sm pt-3 outline-blue-600 focus-within:bg-transparent"
               ></textarea>
 
               <button
                 type="button"
+                onClick={handleSubmit}
                 className="text-white w-full relative bg-blue-500 hover:bg-blue-600 rounded-md text-sm px-6 py-3 !mt-6"
               >
                 <svg

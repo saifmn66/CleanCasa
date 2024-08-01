@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/saifmn66/CleanCasa/issues"
   },
-  "homepage": "https://github.com/saifmn66/CleanCasa#readme"
+  "homepage": "https://github.com/saifmn66/CleanCasa#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "expresse": "^1.0.2",
+    "mongoose": "^8.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
 }

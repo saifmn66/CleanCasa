@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react"
+import { Link } from "react-router-dom";
 
 export default function Signup() {
     const [form , setform] = useState({
@@ -90,7 +91,8 @@ export default function Signup() {
               <button type="button" onClick={handleSubmit} className="w-full py-3 px-6 text-sm tracking-wider font-semibold rounded-md bg-blue-600 hover:bg-blue-700 text-white focus:outline-none">
                 Creat an account
               </button>
-              <p className="text-sm mt-6 text-gray-800">Already have an account? <a href="" className="text-blue-500 font-semibold hover:underline ml-1">Login here</a></p>
+              <p className="text-sm mt-6 text-gray-800">Already have an account? <Link to="/signin" className="text-blue-500 font-semibold hover:underline ml-1">Login here</Link> </p>
+              
             </div>
           </form>
         </div>

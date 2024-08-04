@@ -23,3 +23,15 @@ exports.create = (req, res) => {
       });
     });
   };
+
+
+  exports.aff = (req, res) => {
+    AppointmentModel.find({})
+      .then((data) => {
+        res.send(data);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).send({ message: 'Error fetching data' });
+      });
+  };

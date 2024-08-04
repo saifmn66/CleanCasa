@@ -1,8 +1,11 @@
 import axios from "axios";
+import { useNavigate } from 'react-router-dom';
+
 import { useState } from "react"
 import { Link } from "react-router-dom";
 
 export default function Signup() {
+  const navigate = useNavigate();
     const [form , setform] = useState({
         firstname: "",
         lastname: "",
@@ -17,15 +20,16 @@ export default function Signup() {
         })
     }
     const handleSubmit = () => {
-        
-        axios.post('http://localhost:3000/signup/adduser', form )
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      }
+      axios.post('http://localhost:3000/signup/adduser', form)
+          .then(function (response) {
+              console.log(response);
+              navigate('/'); // Redirect to the homepage after successful submission
+          })
+          .catch(function (error) {
+              console.log(error);
+          });
+  };
+
 
   return (
     <div>
@@ -42,7 +46,7 @@ export default function Signup() {
             </div>
 
             <div>
-              <label className="text-gray-800 text-xs block mb-2">Full Name</label>
+              <label className="text-gray-800 text-xs block mb-2">First Name</label>
               <div className="relative flex items-center">
                 <input name="firstname" onChange={Handlchange} type="text"  required className="w-full bg-transparent text-sm border-b border-gray-300 focus:border-blue-500 px-2 py-3 outline-none" placeholder="Enter firstname" />
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-[18px] h-[18px] text-gray-400 absolute right-2">
@@ -51,7 +55,7 @@ export default function Signup() {
               </div>
             </div>
             <div className="mt-6">
-              <label className="text-gray-800 text-xs block mb-2">Email</label>
+              <label className="text-gray-800 text-xs block mb-2">Last Name</label>
               <div className="relative flex items-center">
                 <input name="lastname" onChange={Handlchange} type="text" required className="w-full bg-transparent text-sm border-b border-gray-300 focus:border-blue-500 px-2 py-3 outline-none" placeholder="Enter lastname" />
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-[18px] h-[18px] text-gray-400 absolute right-2">

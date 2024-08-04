@@ -1,6 +1,6 @@
 const Usermodel = require("../models/user");
 const bcrypt = require('bcrypt');
-var jwt = require('jsonwebtoken');
+const jwt = require('jsonwebtoken');
 
 exports.create = async (req, res) => {
     const { firstname, lastname, email, pass } = req.body;
@@ -31,17 +31,22 @@ exports.create = async (req, res) => {
 };
 
 
-  exports.check = async(req, res) => {
-    const { email, pass } = req.body;
+exports.check = async (req, res) => {
+  const { email, pass } = req.body;
+
+  const user = await Usermodel.findOne({ email });
+
+  if (!user) {
+      return res.json({ message: "Email doesn't exist!" });
+  }
+
+  const isPassValid = await bcrypt.compare(pass, user.pass);
   
-    const user = await Usermodel.findOne({email})
-    !user && res.json({message: "admin dosent exist !"})
+  if (!isPassValid) {
+      return res.json({ message: "Username or password is not correct" });
+  }
 
-    const IsPassValid = await bcrypt.compare(pass , user.pass);
-    !IsPassValid && res.json({messsage: "user name or password is not correct"})
+  const token = jwt.sign({ id: user._id , role: user.role }, "jrima");
 
-    const token = jwt.sign({id: user._id} , "jrima")
-
-    return res.json({token , adminID: admin._id})
-
-  };
+  return res.json({ token, userID: user._id });
+};

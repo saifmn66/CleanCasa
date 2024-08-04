@@ -131,12 +131,7 @@ export default function Contact() {
             <p className="text-sm text-gray-600">
               Providing top-notch cleaning services for all your needs.
             </p>
-            <a
-              href="javascript:void(0);"
-              className="text-blue-600 font-bold inline-block text-sm hover:underline mt-4"
-            >
-              Learn more
-            </a>
+            
           </animated.div>
           <animated.div style={fadeInDiv2} className="bg-white p-6 shadow rounded-md">
             <img src={availble} className='w-8 mb-2' />
@@ -144,12 +139,7 @@ export default function Contact() {
             <p className="text-sm text-gray-600">
               Fast and reliable service available around the clock.
             </p>
-            <a
-              href="javascript:void(0);"
-              className="text-blue-600 font-bold inline-block text-sm hover:underline mt-4"
-            >
-              Learn more
-            </a>
+            
           </animated.div>
           <animated.div style={fadeInDiv3} className="bg-white p-6 shadow rounded-md">
             <img src={garden} className='w-10 mb-2' />
@@ -157,12 +147,7 @@ export default function Contact() {
             <p className="text-sm text-gray-600">
               Expert garden and lawn care services for a beautiful outdoor space.
             </p>
-            <a
-              href="javascript:void(0);"
-              className="text-blue-600 font-bold inline-block text-sm hover:underline mt-4"
-            >
-              Learn more
-            </a>
+            
           </animated.div>
         </div>
       </div>

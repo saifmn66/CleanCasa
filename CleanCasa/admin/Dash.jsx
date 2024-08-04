@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 
 export default function Dash() {
   const [data, setData] = useState([]);
@@ -19,6 +20,20 @@ export default function Dash() {
         console.log(error);
       });
   }, []);
+  
+  const handleDelete = (id) => {
+    axios
+      .delete(`http://localhost:3000/appointment/${id}`)
+      .then((response) => {
+        console.log(response);
+        // Remove the deleted item from the state
+        setData((prevData) => prevData.filter((item) => item._id !== id));
+        toast.success("Your appointment is deleted successfully!");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   // Calculate the index of the first and last item for the current page
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -36,6 +51,7 @@ export default function Dash() {
             <tr>
               <th scope="col" className="px-6 py-3">Name</th>
               <th scope="col" className="px-6 py-3">Email</th>
+              <th scope="col" className="px-6 py-3">Adresse</th>
               <th scope="col" className="px-6 py-3">Phone</th>
               <th scope="col" className="px-6 py-3">Date</th>
               <th scope="col" className="px-6 py-3">Message</th>
@@ -54,16 +70,17 @@ export default function Dash() {
                   {item.name}
                 </td>
                 <td className="px-6 py-4">{item.email}</td>
+                <td className="px-6 py-4">{item.adresse}</td>
                 <td className="px-6 py-4">{item.phone}</td>
                 <td className="px-6 py-4">{new Date(item.date).toLocaleDateString()}</td>
                 <td className="px-6 py-4">{item.message}</td>
                 <td className="px-6 py-4 text-right">
-                  <a
-                    href="#"
-                    className="font-medium text-red-600  hover:underline"
+                <button
+                    onClick={() => handleDelete(item._id)}
+                    className="font-medium text-red-600 hover:underline"
                   >
                     Delete
-                  </a>
+                  </button>
                 </td>
               </tr>
             ))}

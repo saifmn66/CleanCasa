@@ -1,51 +1,72 @@
 import { useEffect, useRef, useState } from "react";
-import { useSpring,  animated, useInView } from "@react-spring/web";
+import { useSpring, animated, useInView } from "@react-spring/web";
 import cover from "../img/newcover2.png";
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
 import rend from "../img/rend.png";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 export default function Rendezvous() {
-  const [form , setform] = useState({
+  const [form, setForm] = useState({
     name: "",
     email: "",
+    adresse: "",
     phone: "",
     date: "",
-    message: ""
-});
-const [startDate, setStartDate] = useState(null);
-
-const handleDateChange = (date) => {
-  const utcDate = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
-  
-  setStartDate(utcDate);
-  setform({
-    ...form,
-    date: date
+    message: "",
   });
-};
+  const [startDate, setStartDate] = useState(null);
 
-const Handlchange = (e) => {
-    setform({
-        ...form ,
-        [e.target.name]: e.target.value
-    })
-}
-const handleSubmit = () => {
-    
-    axios.post('http://localhost:3000/appointment/addapp', form )
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
+  const handleDateChange = (date) => {
+    const utcDate = new Date(
+      Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
+    );
+
+    setStartDate(utcDate);
+    setForm({
+      ...form,
+      date: date,
     });
-  }
+  };
 
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
 
+  const handleSubmit = () => {
+    // Check if any required fields are empty
+    const { name, email, phone, date, message , adresse } = form;
+    if (!name || !email || !phone || !date || !message || !adresse) {
+      toast.error("Please fill in all the required fields.");
+      return;
+    }
 
+    axios
+      .post("http://localhost:3000/appointment/addapp", form)
+      .then(function (response) {
+        toast.success("Your appointment sent successfully!");
+        console.log(response);
+        // Clear form inputs
+        setForm({
+          name: "",
+          email: "",
+          adresse: "",
+          phone: "",
+          date: "",
+          message: "",
+        });
+        setStartDate(null);
+      })
+      .catch(function (error) {
+        toast.error("There was an error sending your appointment.");
+        console.log(error);
+      });
+  };
 
   // Animation for heading and paragraph
   const [headingSpring, headingApi] = useSpring(() => ({
@@ -63,17 +84,12 @@ const handleSubmit = () => {
     transform: "scale(0.9)",
   }));
 
-  
-
-
   // Trigger animations when in view
   const headingRef = useRef();
   const imageRef = useRef();
-  
 
   const headingInView = useInView(headingRef);
   const imageInView = useInView(imageRef);
-  
 
   useEffect(() => {
     if (headingInView) {
@@ -121,7 +137,7 @@ const handleSubmit = () => {
           </animated.div>
         </div>
       </div>
-      <div className="font-[sans-serif]   max-w-6xl mx-auto relative bg-[#f1f1f1] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-3xl overflow-hidden ">
+      <div className="font-[sans-serif] max-w-6xl mx-auto relative bg-[#f1f1f1] shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-3xl overflow-hidden ">
         <div className="absolute -bottom-6 -left-6 w-20 h-20 rounded-full bg-blue-400"></div>
         <div className="absolute -top-6 -right-6 w-20 h-20 rounded-full bg-blue-400"></div>
 
@@ -136,27 +152,41 @@ const handleSubmit = () => {
             </h2>
             <div className="max-w-md mx-auto space-y-3 relative">
               <input
+                required
                 type="text"
-                onChange={Handlchange}
+                onChange={handleChange}
                 name="name"
+                value={form.name}
                 placeholder="Name"
                 className="w-full bg-gray-100 rounded-md py-3 px-4 text-sm outline-blue-600 focus-within:bg-transparent"
               />
               <input
+                required
                 type="email"
-                onChange={Handlchange}
+                onChange={handleChange}
                 name="email"
+                value={form.email}
                 placeholder="Email"
                 className="w-full bg-gray-100 rounded-md py-3 px-4 text-sm outline-blue-600 focus-within:bg-transparent"
               />
               <input
-                type="email"
-                onChange={Handlchange}
+                required
+                type="text"
+                onChange={handleChange}
+                name="adresse"
+                value={form.adresse}
+                placeholder="adresse"
+                className="w-full bg-gray-100 rounded-md py-3 px-4 text-sm outline-blue-600 focus-within:bg-transparent"
+              />
+              <input
+                required
+                type="text"
+                onChange={handleChange}
                 name="phone"
+                value={form.phone}
                 placeholder="Phone No."
                 className="w-full bg-gray-100 rounded-md py-3 px-4 text-sm outline-blue-600 focus-within:bg-transparent"
               />
-
               <div className="relative">
                 <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
                   <svg
@@ -175,6 +205,7 @@ const handleSubmit = () => {
                   </svg>
                 </div>
                 <DatePicker
+                  required
                   className="w-full bg-gray-100 rounded-md py-3 pl-10 pr-4 text-sm outline-blue-600 bg-transparent"
                   selected={startDate}
                   onChange={handleDateChange}
@@ -187,9 +218,10 @@ const handleSubmit = () => {
 
               <textarea
                 placeholder="Message"
-                onChange={Handlchange}
+                onChange={handleChange}
                 rows="6"
                 name="message"
+                value={form.message}
                 className="w-full bg-gray-100 rounded-md px-4 text-sm pt-3 outline-blue-600 focus-within:bg-transparent"
               ></textarea>
 

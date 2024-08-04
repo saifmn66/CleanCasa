@@ -9,6 +9,10 @@ const AppoitmentSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  adresse: {
+    type: String,
+    required: true
+  },
   phone: {
     type: String,
     required: true

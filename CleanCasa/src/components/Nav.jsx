@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
   return (
     <div className="relative z-50">
       <div className="absolute top-0 left-0 right-0 px-4 py-5 mx-auto  sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
@@ -19,7 +20,7 @@ export default function Nav() {
             <span className="ml-2 text-xl font-bold pl-3 text-gray-700 tracking-wide  uppercase">
             <ReactTyped
                     strings={[
-                      "Cleaning Casa"
+                      "Clean Casa"
                     ]}
                     typeSpeed={70}
                     startDelay={2000}
@@ -38,26 +39,19 @@ export default function Nav() {
             <Link to="/appointment" className="custom-link">Appointment</Link>
             </li>
             <li>
-              <a
-                href="/"
-                aria-label="About us"
-                title="About us"
-                className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-              >
-                About us
-              </a>
+            <Link to="/aboutus" className="custom-link">About us</Link>
             </li>
           </ul>
           <ul className="flex items-center hidden space-x-8 lg:flex">
             <li>
-              <a
+              <button
                 href="/"
                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-blue-700 focus:shadow-outline focus:outline-none"
                 aria-label="Sign up"
                 title="Sign up"
               >
-                Sign up
-              </a>
+               <Link to="/appointment" className="custom-link">Appointment</Link>
+              </button>
             </li>
           </ul>
           <div className="lg:hidden">
@@ -118,54 +112,31 @@ export default function Nav() {
                   <nav>
                     <ul className="space-y-4">
                       <li>
-                        <a
-                          href="/"
-                          aria-label="Our product"
-                          title="Our product"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Product
-                        </a>
+                        
+                          <Link onClick={() => setIsMenuOpen(false)} className="custom-link font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" to="/">Home</Link>
+                        
                       </li>
                       <li>
-                        <a
-                          href="/"
-                          aria-label="Our product"
-                          title="Our product"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Features
-                        </a>
+                      <Link onClick={() => setIsMenuOpen(false)} className="custom-link font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"  to="/contact">Contact</Link>
+
                       </li>
                       <li>
-                        <a
-                          href="/"
-                          aria-label="Product pricing"
-                          title="Product pricing"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          Pricing
-                        </a>
+                      <Link onClick={() => setIsMenuOpen(false)} className="custom-link font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400" to="/appointment">Appointment</Link>
+
                       </li>
                       <li>
-                        <a
-                          href="/"
-                          aria-label="About us"
-                          title="About us"
-                          className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
-                        >
-                          About us
-                        </a>
+                      <Link onClick={() => setIsMenuOpen(false)} className="custom-link font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"  to="/aboutus">About us</Link>
+
                       </li>
                       <li>
-                        <a
+                        <button
                           href="/"
                           className="inline-flex items-center  justify-center w-full h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-blue-700 focus:shadow-outline focus:outline-none"
                           aria-label="Sign up"
                           title="Sign up"
                         >
-                          Sign up
-                        </a>
+                          <Link onClick={() => setIsMenuOpen(false)} to="/appointment" className="custom-link">Appointment</Link>
+                        </button>
                       </li>
                     </ul>
                   </nav>

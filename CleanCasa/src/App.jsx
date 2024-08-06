@@ -12,6 +12,7 @@ import AdminRoute from "./components/AdminRoute";
 import Unauthorized from "./pages/Unauthorized";
 import Dash from "../admin/Dash";
 import NotFound from "./pages/NotFound";
+import Aboutus from "./pages/Aboutus";
 
 function App() {
   return (
@@ -41,7 +42,7 @@ function App() {
         />
         <Route path="unauthorized" element={<Unauthorized />} /> 
         <Route path="*" element={<NotFound />} />
-      
+        <Route path="aboutus" element={<Aboutus />} />
       </Routes>
       <Footer />
     </BrowserRouter>

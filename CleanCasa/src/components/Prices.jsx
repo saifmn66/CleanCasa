@@ -1,383 +1,143 @@
+import { Link } from "react-router-dom";
+
 export default function Prices() {
-    
   return (
-    <div >
-      <div className="font-[sans-serif] bg-[#f1f1f1] px-4 py-8">
-        <div className="max-w-5xl mb-16 max-lg:max-w-3xl mx-auto">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold mb-2 text-gray-800">
-              Choose a Subscription
-            </h2>
-            <p className="text-sm text-gray-500">
-              choose a plan tailored to your needs
-            </p>
+    <div>
+      <div className="xl:container bg-[#f1f1f1] m-auto px-6 py-20 md:px-12 lg:px-20">
+        <div className="m-auto text-center lg:w-7/12">
+          <h2 className="text-2xl font-bold text-gray-800 md:text-4xl">
+            Explore Our Service Packages
+            <br />
+            <span className="text-blue-600">Tailored for Your Needs</span>
+          </h2>
+        </div>
+        <div className="mt-12 grid items-center gap-6 md:grid-cols-2 lg:flex lg:space-x-8">
+          {/* Home Cleaning Package */}
+          <div className="group relative md:col-span-1 lg:w-[32%]">
+            <div
+              aria-hidden="true"
+              className="absolute top-0 h-full w-full rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 transition duration-500 group-hover:scale-105 lg:group-hover:scale-110"
+            ></div>
+            <div className="relative space-y-8 p-8">
+              <h3 className="text-center text-3xl font-semibold text-gray-700">Home Cleaning</h3>
+              <div className="relative flex justify-around">
+                <div className="flex">
+                  <span className="-ml-6 mt-2 text-3xl font-bold text-primary">€</span>
+                  <span className="leading-0 text-8xl font-bold text-gray-800">79</span>
+                </div>
+                <span className="absolute right-9 bottom-2 text-xl font-bold text-primary">/ Service</span>
+              </div>
+              <ul role="list" className="m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300">
+                <li className="flex items-center space-x-2 text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]" viewBox="0 0 24 24">
+                    <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" />
+                  </svg>
+                  <span>Thorough home cleaning</span>
+                </li>
+                <li className="flex items-center space-x-2 text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]" viewBox="0 0 24 24">
+                    <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" />
+                  </svg>
+                  <span>Deep cleaning and sanitization</span>
+                </li>
+                <li className="flex items-center space-x-2 text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]" viewBox="0 0 24 24">
+                    <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" />
+                  </svg>
+                  <span>Flexible scheduling</span>
+                </li>
+              </ul>
+              <Link to="/appointment">
+              <button className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
+                <span className="relative text-base font-semibold text-sky-600">Book Now</span>
+              </button>
+              </Link>
+            </div>
           </div>
 
-          
-
-          <div className="grid lg:grid-cols-3 sm:grid-cols-2 gap-6 max-sm:max-w-sm max-sm:mx-auto mt-12">
-            <div className="bg-white shadow rounded-3xl p-6 hover:scale-105 transition-all duration-300">
-              <h4 className="text-gray-800 text-lg mb-3">Basic</h4>
-              <h3 className="text-4xl font-semibold ">
-                $4.50
-                <sub className="text-gray-500 font-medium text-sm ml-1">
-                  / month
-                </sub>
-              </h3>
-
-              <hr className="my-6 border-gray-300" />
-
-              <div>
-                <ul className="space-y-4">
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    50 Image generations
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    500 Credits
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    Monthly 100 Credits Free
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    Customer Support
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    Dedicated Server
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    Priority Generations
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    50GB Cloud Storage
-                  </li>
-                </ul>
-
-                <button
-                  type="button"
-                  className="w-full mt-6 px-4 py-2 text-sm tracking-wide bg-blue-600 hover:bg-blue-700 text-white rounded-xl"
-                >
-                  Get Started
-                </button>
+          {/* Garden Care Package */}
+          <div className="group relative md:col-span-1 lg:w-[32%]">
+            <div
+              aria-hidden="true"
+              className="absolute top-0 h-full w-full rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 transition duration-500 group-hover:scale-105 lg:group-hover:scale-110"
+            ></div>
+            <div className="relative space-y-8 p-8">
+              <h3 className="text-center text-3xl font-semibold text-gray-700">Garden Care</h3>
+              <div className="relative flex justify-around">
+                <div className="flex">
+                  <span className="-ml-6 mt-2 text-3xl font-bold text-primary">€</span>
+                  <span className="leading-0 text-8xl font-bold text-gray-800">59</span>
+                </div>
+                <span className="absolute right-9 bottom-2 text-xl font-bold text-primary">/ Service</span>
               </div>
+              <ul role="list" className="m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300">
+                <li className="flex items-center space-x-2 text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]" viewBox="0 0 24 24">
+                    <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" />
+                  </svg>
+                  <span>Garden maintenance and trimming</span>
+                </li>
+                <li className="flex items-center space-x-2 text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]" viewBox="0 0 24 24">
+                    <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" />
+                  </svg>
+                  <span>Weed control and fertilization</span>
+                </li>
+                <li className="flex items-center space-x-2 text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]" viewBox="0 0 24 24">
+                    <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" />
+                  </svg>
+                  <span>Garden design and decoration</span>
+                </li>
+              </ul>
+              <Link to="/appointment">
+              <button className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
+                <span className="relative text-base font-semibold text-sky-600">Book Now</span>
+              </button>
+              </Link>
             </div>
+          </div>
 
-            <div className="bg-white shadow rounded-3xl p-6 hover:scale-105 transition-all duration-300">
-              <h4 className="text-gray-800 text-lg mb-3">Startup</h4>
-              <h3 className="text-4xl font-semibold ">
-                $14.50
-                <sub className="text-gray-500 font-medium text-sm ml-1">
-                  / month
-                </sub>
-              </h3>
-
-              <hr className="my-6 border-gray-300" />
-
-              <div>
-                <ul className="space-y-4">
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    200 Image generations
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    1200 Credits
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    Monthly 1000 Credits Free
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    Customer Support
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    Dedicated Server
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    Priority Generations
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    150GB Cloud Storage
-                  </li>
-                </ul>
-                <button
-                  type="button"
-                  className="w-full mt-6 px-4 py-2 text-sm tracking-wide bg-blue-600 hover:bg-blue-700 text-white rounded-xl"
-                >
-                  Get Started
-                </button>
+          {/* Company Cleaning Package */}
+          <div className="group relative md:col-span-1 lg:w-[32%]">
+            <div
+              aria-hidden="true"
+              className="absolute top-0 h-full w-full rounded-3xl border border-gray-100 bg-white shadow-2xl shadow-gray-600/10 transition duration-500 group-hover:scale-105 lg:group-hover:scale-110"
+            ></div>
+            <div className="relative space-y-8 p-8">
+              <h3 className="text-center text-3xl font-semibold text-gray-700">Company Cleaning</h3>
+              <div className="relative flex justify-around">
+                <div className="flex">
+                  <span className="-ml-6 mt-2 text-3xl font-bold text-primary">€</span>
+                  <span className="leading-0 text-8xl font-bold text-gray-800">149</span>
+                </div>
+                <span className="absolute right-9 bottom-2 text-xl font-bold text-primary">/ Service</span>
               </div>
-            </div>
-
-            <div className="bg-white shadow rounded-3xl p-6 hover:scale-105 transition-all duration-300">
-              <h4 className="text-gray-800 text-lg mb-3">Enterprise</h4>
-              <h3 className="text-4xl font-semibold ">
-                $24.50
-                <sub className="text-gray-500 font-medium text-sm ml-1">
-                  / month
-                </sub>
-              </h3>
-
-              <hr className="my-6 border-gray-300" />
-
-              <div>
-                <ul className="space-y-4">
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    400 Image generations
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    2000 Credits
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    Monthly 1500 Credits Free
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    Customer Support
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    Dedicated Server
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    Priority Generations
-                  </li>
-                  <li className="flex items-center text-sm text-gray-500">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"
-                        data-original="#000000"
-                      />
-                    </svg>
-                    500GB Cloud Storage
-                  </li>
-                </ul>
-                <button
-                  type="button"
-                  className="w-full mt-6 px-4 py-2 text-sm tracking-wide bg-blue-600 hover:bg-blue-700 text-white rounded-xl"
-                >
-                  Get Started
-                </button>
-              </div>
+              <ul role="list" className="m-auto w-max space-y-4 pb-6 text-gray-600 dark:text-gray-300">
+                <li className="flex items-center space-x-2 text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]" viewBox="0 0 24 24">
+                    <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" />
+                  </svg>
+                  <span>Comprehensive office cleaning</span>
+                </li>
+                <li className="flex items-center space-x-2 text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]" viewBox="0 0 24 24">
+                    <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" />
+                  </svg>
+                  <span>Regular maintenance and sanitation</span>
+                </li>
+                <li className="flex items-center space-x-2 text-gray-500">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" className="mr-3 bg-blue-100 fill-blue-600 rounded-full p-[3px]" viewBox="0 0 24 24">
+                    <path d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z" />
+                  </svg>
+                  <span>Specialized cleaning for businesses</span>
+                </li>
+              </ul>
+              <Link to="/appointment">
+              <button className="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-sky-50 before:border before:border-sky-500 dark:before:border-gray-600 dark:before:bg-gray-700 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95">
+                <span className="relative text-base font-semibold text-sky-600">Book Now</span>
+              </button>
+              </Link>
             </div>
           </div>
         </div>

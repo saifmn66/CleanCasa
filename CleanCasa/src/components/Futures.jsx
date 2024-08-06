@@ -83,7 +83,7 @@ export default function Futures() {
 
         <div className="grid md:grid-cols-2 gap-8 max-md:max-w-lg mx-auto">
           <animated.div style={fadeIn1}>
-            <div className="text-left bg-blue-50 rounded-lg shadow p-6">
+            <div className="text-left bg-blue-50 rounded-lg shadow p-6 ">
               <div className="p-3 bg-white rounded-full w-fit">
                 <img src={clean1} className="w-10" alt="House Cleaning" />
               </div>

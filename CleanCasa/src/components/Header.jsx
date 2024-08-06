@@ -1,4 +1,4 @@
-import { useSpring, animated } from '@react-spring/web';
+import { useSpring, animated } from "@react-spring/web";
 import bgImage from "../img/blob-scene-haikei.svg";
 import cov from "../img/newcover.png";
 import { ReactTyped } from "react-typed";
@@ -8,12 +8,12 @@ export default function Header() {
   const headingAnimation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    config: { duration: 1500 }, 
+    config: { duration: 1500 },
   });
 
   const imageAnimation = useSpring({
-    transform: 'translateY(0)',
-    from: { transform: 'translateY(50px)' },
+    transform: "translateY(0)",
+    from: { transform: "translateY(50px)" },
     config: { tension: 220, friction: 120 },
   });
 
@@ -34,18 +34,18 @@ export default function Header() {
                 <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
                   <ReactTyped
                     strings={[
-                      "Enjoy a Sparkling Clean Today",
-                      "Enjoy a Fresh Space Now",
-                      "Enjoy a Thorough Clean Here"
+                      "Experience a Sparkling Clean Today",
+                      "Enjoy a Fresh and Inviting Space",
+                      "Trust Us for a Thorough Clean",
                     ]}
                     typeSpeed={70}
                     backSpeed={60}
                   />
                 </h2>
                 <p className="text-base text-gray-700 md:text-lg">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae. explicabo.
+                  At Clean Casa, we deliver exceptional cleaning services for a
+                  spotless and welcoming environment. From routine cleaning to
+                  deep sanitization, trust us to make a difference.
                 </p>
               </animated.div>
               <p className="mb-4 text-sm font-bold tracking-widest uppercase">
@@ -69,7 +69,7 @@ export default function Header() {
                         />
                       </svg>
                     </span>
-                    A slice of heaven
+                    Professional House Cleaning
                   </li>
                   <li className="flex">
                     <span className="mr-1">
@@ -87,7 +87,7 @@ export default function Header() {
                         />
                       </svg>
                     </span>
-                    Disrupt inspire
+                    Corporate and Restaurant Cleaning
                   </li>
                   <li className="flex">
                     <span className="mr-1">
@@ -105,7 +105,7 @@ export default function Header() {
                         />
                       </svg>
                     </span>
-                    Preliminary thinking
+                    Comprehensive Garden Care
                   </li>
                 </ul>
                 <ul className="space-y-3">
@@ -125,7 +125,7 @@ export default function Header() {
                         />
                       </svg>
                     </span>
-                    Flipboard curmudgeon
+                    Customized Cleaning Plans
                   </li>
                   <li className="flex">
                     <span className="mr-1">
@@ -143,7 +143,7 @@ export default function Header() {
                         />
                       </svg>
                     </span>
-                    Storage shed
+                    Eco-Friendly Products
                   </li>
                   <li className="flex">
                     <span className="mr-1">
@@ -161,11 +161,12 @@ export default function Header() {
                         />
                       </svg>
                     </span>
-                    Satoshi Nakamoto
+                    Trained and Trusted Staff
                   </li>
                 </ul>
               </div>
             </div>
+
             <animated.div style={imageAnimation}>
               <img
                 className="w-full sm:w-[47vw] h-56 sm:h-96"

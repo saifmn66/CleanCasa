@@ -1,4 +1,5 @@
-import logo from "../img/logo.png"
+import logo from "../img/logo.png";
+
 export default function Footer() {
   return (
     <div className="bg-[#f1f1f1] -mt-12">
@@ -22,26 +23,21 @@ export default function Footer() {
                 title="Company"
                 className="inline-flex items-center"
               >
-                <img src={logo} alt="logo" />
+                <img src={logo} alt="logo" className="h-8" />
                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
                   Clean Casa
                 </span>
               </a>
               <div className="mt-4 lg:max-w-sm">
-                <p className="text-sm text-deep-purple-50">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam.
-                </p>
-                <p className="mt-4 text-sm text-deep-purple-50">
-                  Eaque ipsa quae ab illo inventore veritatis et quasi
-                  architecto beatae vitae dicta sunt explicabo.
+                <p className="text-sm text-gray-200">
+                  Clean Casa provides top-notch cleaning services for homes and businesses, ensuring a spotless and welcoming environment.
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
               <div>
                 <p className="font-semibold tracking-wide text-teal-accent-400">
-                  Category
+                  Services
                 </p>
                 <ul className="mt-2 space-y-2">
                   <li>
@@ -49,7 +45,7 @@ export default function Footer() {
                       href="/"
                       className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                     >
-                      News
+                      House Cleaning
                     </a>
                   </li>
                   <li>
@@ -57,7 +53,7 @@ export default function Footer() {
                       href="/"
                       className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                     >
-                      World
+                      Corporate Cleaning
                     </a>
                   </li>
                   <li>
@@ -65,7 +61,7 @@ export default function Footer() {
                       href="/"
                       className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                     >
-                      Games
+                      Garden Care
                     </a>
                   </li>
                   <li>
@@ -73,61 +69,37 @@ export default function Footer() {
                       href="/"
                       className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                     >
-                      References
+                      Grass Clipping
                     </a>
                   </li>
                 </ul>
               </div>
               <div>
                 <p className="font-semibold tracking-wide text-teal-accent-400">
-                  Cherry
+                  About Us
                 </p>
                 <ul className="mt-2 space-y-2">
                   <li>
                     <a
-                      href="/"
+                      href="/aboutus"
                       className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                     >
-                      Web
+                      Our Story
                     </a>
                   </li>
                   <li>
                     <a
-                      href="/"
+                      href="/contact"
                       className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                     >
-                      eCommerce
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                    >
-                      Business
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                    >
-                      Entertainment
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                    >
-                      Portfolio
+                      Contact
                     </a>
                   </li>
                 </ul>
               </div>
               <div>
                 <p className="font-semibold tracking-wide text-teal-accent-400">
-                  Apples
+                  Support
                 </p>
                 <ul className="mt-2 space-y-2">
                   <li>
@@ -135,7 +107,7 @@ export default function Footer() {
                       href="/"
                       className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                     >
-                      Media
+                      FAQ
                     </a>
                   </li>
                   <li>
@@ -143,38 +115,14 @@ export default function Footer() {
                       href="/"
                       className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                     >
-                      Brochure
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                    >
-                      Nonprofit
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                    >
-                      Educational
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                    >
-                      Projects
+                      Help Center
                     </a>
                   </li>
                 </ul>
               </div>
               <div>
                 <p className="font-semibold tracking-wide text-teal-accent-400">
-                  Business
+                  Legal
                 </p>
                 <ul className="mt-2 space-y-2">
                   <li>
@@ -182,7 +130,7 @@ export default function Footer() {
                       href="/"
                       className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                     >
-                      Infopreneur
+                      Privacy Policy
                     </a>
                   </li>
                   <li>
@@ -190,23 +138,7 @@ export default function Footer() {
                       href="/"
                       className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
                     >
-                      Personal
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                    >
-                      Wiki
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="transition-colors duration-300 text-deep-purple-50 hover:text-teal-accent-400"
-                    >
-                      Forum
+                      Terms of Service
                     </a>
                   </li>
                 </ul>
@@ -215,7 +147,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col justify-between pt-5 pb-10 border-t border-gray-600 sm:flex-row">
             <p className="text-sm text-gray-100">
-              © Copyright 2020 Lorem Inc. All rights reserved.
+              © {new Date().getFullYear()} Clean Casa. All rights reserved. Developed by patosaif33@gmail.com.
             </p>
             <div className="flex items-center mt-4 space-x-4 sm:mt-0">
               <a
@@ -232,7 +164,7 @@ export default function Footer() {
               >
                 <svg viewBox="0 0 30 30" fill="currentColor" className="h-6">
                   <circle cx="15" cy="15" r="4"></circle>
-                  <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10   C27,6.14,23.859,3,19.999,3z M15,21c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S18.309,21,15,21z M22,9c-0.552,0-1-0.448-1-1   c0-0.552,0.448-1,1-1s1,0.448,1,1C23,8.552,22.552,9,22,9z"></path>
+                  <path d="M19.999,3h-10C6.14,3,3,6.141,3,10.001v10C3,23.86,6.141,27,10.001,27h10C23.86,27,27,23.859,27,19.999v-10 C27,6.14,23.859,3,19.999,3z M15,19.202c-2.316,0-4.202-1.886-4.202-4.202S12.684,10.798,15,10.798s4.202,1.886,4.202,4.202 S17.316,19.202,15,19.202z M21.802,9.197c-0.54,0-0.977-0.437-0.977-0.977c0-0.54,0.437-0.977,0.977-0.977 s0.977,0.437,0.977,0.977C22.78,8.761,22.343,9.197,21.802,9.197z M20.472,20.472c-0.41,0.41-0.953,0.637-1.53,0.637h-6.58 c-1.197,0-2.167-0.97-2.167-2.167v-6.58c0-0.577,0.227-1.12,0.637-1.53c0.41-0.41,0.953-0.637,1.53-0.637h6.58 c1.197,0,2.167,0.97,2.167,2.167v6.58C21.109,19.519,20.882,20.062,20.472,20.472z"></path>
                 </svg>
               </a>
               <a
@@ -240,7 +172,7 @@ export default function Footer() {
                 className="transition-colors duration-300 text-deep-purple-100 hover:text-teal-accent-400"
               >
                 <svg viewBox="0 0 24 24" fill="currentColor" className="h-5">
-                  <path d="M22,0H2C0.895,0,0,0.895,0,2v20c0,1.105,0.895,2,2,2h11v-9h-3v-4h3V8.413c0-3.1,1.893-4.788,4.659-4.788 c1.325,0,2.463,0.099,2.795,0.143v3.24l-1.918,0.001c-1.504,0-1.795,0.715-1.795,1.763V11h4.44l-1,4h-3.44v9H22c1.105,0,2-0.895,2-2 V2C24,0.895,23.105,0,22,0z"></path>
+                  <path d="M22,12c0-5.5-4.5-10-10-10S2,6.5,2,12c0,5,3.7,9.2,8.5,9.9v-7H7.5v-3h3V9.5c0-3.1,1.8-4.8,4.7-4.8 c1.4,0,2.9,0.2,2.9,0.2v3h-1.6c-1.6,0-2.1,1-2.1,2v2.3h3.6l-0.6,3H14.4v7C19.3,21.2,22,17,22,12z"></path>
                 </svg>
               </a>
             </div>

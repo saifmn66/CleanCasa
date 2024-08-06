@@ -105,24 +105,23 @@ export default function Rendezvous() {
     <div className="pb-36 bg-[#f1f1f1]">
       <div className="font-sans max-w-6xl sm:pt-[15vh] pt-[5vh] bg-[#f1f1f1] max-md:max-w-md mx-auto">
         <div className="grid md:grid-cols-2 items-center md:gap-8 gap-6">
-          <div className="max-md:order-1 max-md:text-center z-50 relative">
-            <animated.h2
-              className="text-gray-800 lg:text-6xl md:text-5xl text-3xl font-extrabold md:!leading-[56px]"
-              style={headingSpring}
-              ref={headingRef}
-            >
-              <span className="text-blue-600">Smart</span> Business with{" "}
-              <span className="text-blue-600">Smart</span> People
-            </animated.h2>
-            <animated.p
-              className="text-gray-600 mt-6 text-base leading-relaxed"
-              style={textSpring}
-            >
-              Laboris qui Lorem ad tempor ut reprehenderit. Nostrud anim nulla
-              officia ea sit deserunt. Eu eu quis anim aute Laboris qui Lorem ad
-              tempor ut reprehenderit.
-            </animated.p>
-          </div>
+        <div className="max-md:order-1 max-md:text-center z-50 relative">
+          <animated.h2
+            className="text-gray-800 lg:text-6xl md:text-5xl text-3xl font-extrabold md:!leading-[56px]"
+            style={headingSpring}
+            ref={headingRef}
+          >
+            <span className="text-blue-600">Book</span> an Appointment with{" "}
+            <span className="text-blue-600">Clean Casa</span>
+          </animated.h2>
+          <animated.p
+            className="text-gray-600 mt-6 text-base leading-relaxed"
+            style={textSpring}
+          >
+            Whether you need house cleaning or garden care, Clean Casa is here to help. Schedule your appointment today and enjoy a pristine home and beautiful garden.
+          </animated.p>
+        </div>
+
 
           <animated.div
             className="lg:h-[550px] md:h-[550px] flex items-center relative max-md:before:hidden before:absolute before:h-[120%] before:w-[120%] before:right-0 before:z-0"
@@ -148,7 +147,7 @@ export default function Rendezvous() {
 
           <form className="rounded-tl-3xl rounded-bl-3xl">
             <h2 className="text-2xl text-blue-600 font-bold text-center mb-6">
-              Contact us
+            Appointment
             </h2>
             <div className="max-w-md mx-auto space-y-3 relative">
               <input
@@ -175,7 +174,7 @@ export default function Rendezvous() {
                 onChange={handleChange}
                 name="adresse"
                 value={form.adresse}
-                placeholder="adresse"
+                placeholder="Adresse"
                 className="w-full bg-gray-100 rounded-md py-3 px-4 text-sm outline-blue-600 focus-within:bg-transparent"
               />
               <input
@@ -217,7 +216,7 @@ export default function Rendezvous() {
               </div>
 
               <textarea
-                placeholder="Message"
+                placeholder="Message And Pack You Need It"
                 onChange={handleChange}
                 rows="6"
                 name="message"

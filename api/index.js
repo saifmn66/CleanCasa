@@ -1,5 +1,6 @@
 const express = require('express') ;
 const mongoose = require('mongoose') ;
+const path = require('path');
 const app = express() ;
 const port = 3000 ;
 const cors = require('cors');
@@ -26,3 +27,14 @@ db.once('open', function() {
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
+app.use(express.static(path.join(__dirname, '../CleanCasa/dist')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../CleanCasa/dist', 'index.html'));
+});
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});

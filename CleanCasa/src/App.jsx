@@ -10,7 +10,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AdminRoute from "./components/AdminRoute";
 import Unauthorized from "./pages/Unauthorized";
-import Dash from "../admin/Dash";
+import Dash from "./admin/Dash";
 import NotFound from "./pages/NotFound";
 import Aboutus from "./pages/Aboutus";
 

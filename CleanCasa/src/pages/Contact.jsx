@@ -176,7 +176,7 @@ export default function Contact() {
             <img src={face} className='w-8' />
             <div className="mt-4 text-center">
               <h4 className="text-gray-800 text-base font-bold">Facebook</h4>
-              <p className="text-sm text-gray-500 mt-2">jrima fb</p>
+              <p className="text-sm text-gray-500 mt-2">Clean casa</p>
             </div>
           </animated.div>
 

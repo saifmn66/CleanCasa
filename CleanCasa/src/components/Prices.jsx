@@ -20,10 +20,12 @@ export default function Prices() {
             ></div>
             <div className="relative space-y-8 p-8">
               <h3 className="text-center text-3xl font-semibold text-gray-700">Home Cleaning</h3>
+              <p className="text-center text-gray-700 text-xl">starting from</p>
+
               <div className="relative flex justify-around">
                 <div className="flex">
                   <span className="-ml-6 mt-2 text-3xl font-bold text-primary">€</span>
-                  <span className="leading-0 text-8xl font-bold text-gray-800">79</span>
+                  <span className="leading-0 text-8xl font-bold text-gray-800">39</span>
                 </div>
                 <span className="absolute right-9 bottom-2 text-xl font-bold text-primary">/ Service</span>
               </div>
@@ -63,6 +65,8 @@ export default function Prices() {
             ></div>
             <div className="relative space-y-8 p-8">
               <h3 className="text-center text-3xl font-semibold text-gray-700">Garden Care</h3>
+              <p className="text-center text-gray-700 text-xl">starting from</p>
+
               <div className="relative flex justify-around">
                 <div className="flex">
                   <span className="-ml-6 mt-2 text-3xl font-bold text-primary">€</span>
@@ -106,10 +110,12 @@ export default function Prices() {
             ></div>
             <div className="relative space-y-8 p-8">
               <h3 className="text-center text-3xl font-semibold text-gray-700">Company Cleaning</h3>
+              <p className="text-center text-gray-700 text-xl">starting from</p>
+
               <div className="relative flex justify-around">
                 <div className="flex">
                   <span className="-ml-6 mt-2 text-3xl font-bold text-primary">€</span>
-                  <span className="leading-0 text-8xl font-bold text-gray-800">149</span>
+                  <span className="leading-0 text-8xl font-bold text-gray-800">69</span>
                 </div>
                 <span className="absolute right-9 bottom-2 text-xl font-bold text-primary">/ Service</span>
               </div>

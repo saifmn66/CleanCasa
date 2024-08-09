@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express') ;
 const mongoose = require('mongoose') ;
 const path = require('path');
@@ -13,16 +14,12 @@ const AppiontmentRoute = require("./routes/appointment");
 app.use('/signup' , UserRoute);
 app.use('/appointment' , AppiontmentRoute);
 
-mongoose.connect('mongodb://localhost:27017/CleanCasa', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true 
-}).catch(error => console.error('Error connecting to MongoDB:', error))
 
-const db = mongoose.connection
-db.on('error', console.error.bind(console, 'connection error'))
-db.once('open', function() {
-  console.log('db connected successfully') 
-})
+// Replace <password> with your database user's password and <dbname> with your database name
+const uri = process.env.MONGODB_URI;
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.log('MongoDB connection error:', err));
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

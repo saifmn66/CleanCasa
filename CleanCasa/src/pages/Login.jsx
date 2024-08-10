@@ -22,7 +22,7 @@ export default function Login() {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('http://localhost:3000/signup/login', form);
+      const response = await axios.post('https://cleancasa-2.onrender.com/signup/login', form);
       console.log(response);
   
       // Check if the login was successful

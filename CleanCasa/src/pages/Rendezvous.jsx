@@ -47,7 +47,7 @@ export default function Rendezvous() {
     }
 
     axios
-      .post("http://localhost:3000/appointment/addapp", form)
+      .post("https://cleancasa-2.onrender.com/appointment/addapp", form)
       .then(function (response) {
         toast.success("Your appointment sent successfully!");
         console.log(response);

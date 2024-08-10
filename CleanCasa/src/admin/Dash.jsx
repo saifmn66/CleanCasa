@@ -9,7 +9,7 @@ export default function Dash() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/appointment/fetch")
+      .get("https://cleancasa-2.onrender.com/appointment/fetch")
       .then((response) => {
         // handle success
         console.log(response);
@@ -23,7 +23,7 @@ export default function Dash() {
   
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:3000/appointment/${id}`)
+      .delete(`https://cleancasa-2.onrender.com/appointment/${id}`)
       .then((response) => {
         console.log(response);
         // Remove the deleted item from the state

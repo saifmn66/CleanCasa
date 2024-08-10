@@ -38,7 +38,7 @@ export default function Signup() {
 
   const handleSubmit = () => {
     if (validateForm()) {
-      axios.post('http://localhost:3000/signup/adduser', form)
+      axios.post('https://cleancasa-2.onrender.com/signup/adduser', form)
         .then(function (response) {
           console.log(response);
           toast.success("Your Account is Created successfully!");

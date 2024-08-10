@@ -1,10 +1,15 @@
+require('dotenv').config();
 const Usermodel = require("../models/user");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 exports.create = async (req, res) => {
     const { firstname, lastname, email, pass } = req.body;
-    
+
+    if (!firstname || !lastname || !email || !pass) {
+        return res.status(400).json({ message: 'All fields are required' });
+    }
+
     try {
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(pass, salt);
@@ -18,35 +23,46 @@ exports.create = async (req, res) => {
 
         await newuser.save();
 
-        res.status(200).send({
+        res.status(201).json({
             message: 'Successfully created user!'
         });
     } catch (err) {
-        console.log(err);
-        res.status(500).send({
+        console.error(err);
+        res.status(500).json({
             message: 'Error creating user',
             error: err.message
         });
     }
 };
 
-
 exports.check = async (req, res) => {
-  const { email, pass } = req.body;
+    const { email, pass } = req.body;
 
-  const user = await Usermodel.findOne({ email });
+    if (!email || !pass) {
+        return res.status(400).json({ message: 'Email and password are required' });
+    }
 
-  if (!user) {
-      return res.json({ message: "Email doesn't exist!" });
-  }
+    try {
+        const user = await Usermodel.findOne({ email });
 
-  const isPassValid = await bcrypt.compare(pass, user.pass);
-  
-  if (!isPassValid) {
-      return res.json({ message: "Username or password is not correct" });
-  }
+        if (!user) {
+            return res.status(400).json({ message: "Email doesn't exist!" });
+        }
 
-  const token = jwt.sign({ id: user._id , role: user.role }, "jrima");
+        const isPassValid = await bcrypt.compare(pass, user.pass);
 
-  return res.json({ token, userID: user._id });
+        if (!isPassValid) {
+            return res.status(400).json({ message: "Username or password is not correct" });
+        }
+
+        const token = jwt.sign({ id: user._id, role: user.role }, process.env.JWT_SECRET);
+
+        return res.status(200).json({ token, userID: user._id });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({
+            message: 'Error during authentication',
+            error: err.message
+        });
+    }
 };

@@ -25,13 +25,3 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-app.use(express.static(path.join(__dirname, '../CleanCasa/dist')));
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../CleanCasa/dist', 'index.html'));
-});
-
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});

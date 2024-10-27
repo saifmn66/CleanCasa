@@ -1,4 +1,4 @@
-import logo from "../img/logo.png";
+import logo from "../img/logofinal2.png";
 
 export default function Footer() {
   return (
@@ -23,7 +23,7 @@ export default function Footer() {
                 title="Company"
                 className="inline-flex items-center"
               >
-                <img src={logo} alt="logo" className="h-8" />
+                <img src={logo} alt="logo" className="h-12 mr-4" />
                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
                   Clean Casa
                 </span>

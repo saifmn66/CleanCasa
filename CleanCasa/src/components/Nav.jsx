@@ -1,5 +1,5 @@
 import { useState } from "react";
-import logo from "../img/logo.png";
+import logo from "../img/logofinal2.png";
 import { ReactTyped } from "react-typed";
 import { Link } from "react-router-dom";
 
@@ -16,7 +16,7 @@ export default function Nav() {
             title="Company"
             className="inline-flex items-center"
           >
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" className="max-h-20" />
             <span className="ml-2 text-xl font-bold pl-3 text-gray-700 tracking-wide  uppercase">
             <ReactTyped
                     strings={[
